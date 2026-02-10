@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心灵树洞 - 匿名倾诉与倾听</title>
+    <script src="./心灵树洞 - 匿名倾诉与倾听_files/saved_resource"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-shims.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B7355',
+                        secondary: '#D4B896',
+                        accent: '#F5E6D3',
+                        warm: '#FFF8DC',
+                        earth: '#A0522D',
+                        flower: '#4ADE80', // 柔和的绿色作为鲜花颜色
+                        hugCount: '#3B82F6', // 蓝色作为拥抱统计颜色
+                        error: '#EF4444', // 红色作为错误提示颜色
+                        success: '#10B981' // 绿色作为成功提示颜色
+                    },
+                    fontFamily: {
+                        'handwriting': ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+            .letter-fall {
+                animation: letterFall 8s infinite linear;
+            }
+            .treehole-enter {
+                animation: treeholeEnter 2s ease-in-out forwards;
+            }
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+            .pulse-glow {
+                animation: pulseGlow 2s ease-in-out infinite alternate;
+            }
+            .fade-in {
+                animation: fadeIn 0.5s ease-in-out forwards;
+            }
+            .slide-up {
+                animation: slideUp 0.6s ease-out forwards;
+            }
+            .treehole-zoom {
+                animation: treeholeZoom 1.5s ease-in-out forwards;
+            }
+            .darken-background {
+                animation: darkenBackground 1s ease-in-out forwards;
+            }
+            .darken-reverse {
+                animation: darkenReverse 1s ease-in-out forwards;
+            }
+            .error-shake {
+                animation: errorShake 0.5s ease-in-out forwards;
+            }
+        }
+        
+        @keyframes letterFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes treeholeEnter {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(10);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(245, 230, 211, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 40px rgba(245, 230, 211, 0.8);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes treeholeZoom {
+            0% {
+                transform: scale(0.3) translate(-50%, -50%);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) translate(-45%, -45%);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes darkenBackground {
+            from {
+                background-color: rgba(0, 0, 0, 0);
+            }
+            to {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        
+        @keyframes darkenReverse {
+            from {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            to {
+                background-color: rgba(0, 0, 0, 0);
+            }
+        }
+        
+        @keyframes errorShake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+        }
+        
+        .treehole-bg {
+            background-image: url('https://aka.doubaocdn.com/s/7s861w0Z9s');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .letter-card {
+            transition: all 0.3s ease;
+        }
+        
+        .letter-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .modal-backdrop {
+            backdrop-filter: blur(5px);
+        }
+        
+        .user-info {
+            background: rgba(139, 115, 85, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        .tree-click-area {
+            position: absolute;
+            width: 40%;
+            height: 60%;
+            top: 20%;
+            left: 30%;
+            cursor: pointer;
+            z-index: 20;
+        }
+        
+        .treehole-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 30;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .darken-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            z-index: 15;
+            pointer-events: none;
+        }
+        
+        .hug-notification {
+            animation: hugNotification 4s ease-in-out forwards;
+        }
+        
+        @keyframes hugNotification {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            10% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            90% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+        
+        .stat-notification {
+            animation: statNotification 5s ease-in-out forwards;
+        }
+        
+        @keyframes statNotification {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            90% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+        
+        .hug-badge {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .hug-badge:hover {
+            transform: scale(1.1);
+            background-color: #dc2626 !important;
+        }
+        
+        .notification {
+            transition: all 0.3s ease;
+        }
+        
+        .notification:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.right-4{right:1rem}.top-4{top:1rem}.bottom-4{bottom:1rem}.left-4{left:1rem}.top-12{top:3rem}.top-24{top:6rem}.top-36{top:9rem}.z-10{z-index:10}.z-50{z-index:50}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-20{margin-bottom:5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mb-12{margin-bottom:3rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-24{height:6rem}.h-48{height:12rem}.min-h-screen{min-height:100vh}.w-16{width:4rem}.w-24{width:6rem}.w-48{width:12rem}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-md{max-width:28rem}.max-w-2xl{max-width:42rem}.max-w-6xl{max-width:72rem}.cursor-pointer{cursor:pointer}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-4{border-width:4px}.border-secondary{--tw-border-opacity:1;border-color:rgb(212 184 150 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-earth{--tw-bg-opacity:1;background-color:rgb(160 82 45 / var(--tw-bg-opacity, 1))}.bg-error{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(139 115 85 / var(--tw-bg-opacity, 1))}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(212 184 150 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-accent{--tw-bg-opacity:1;background-color:rgb(245 230 211 / var(--tw-bg-opacity, 1))}.bg-flower{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.bg-hugCount{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-rose-600{--tw-bg-opacity:1;background-color:rgb(225 29 72 / var(--tw-bg-opacity, 1))}.bg-opacity-20{--tw-bg-opacity:0.2}.bg-opacity-50{--tw-bg-opacity:0.5}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-accent{--tw-gradient-from:#F5E6D3 var(--tw-gradient-from-position);--tw-gradient-to:rgb(245 230 211 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-earth{--tw-gradient-from:#A0522D var(--tw-gradient-from-position);--tw-gradient-to:rgb(160 82 45 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-warm{--tw-gradient-to:#FFF8DC var(--tw-gradient-to-position)}.to-primary{--tw-gradient-to:#8B7355 var(--tw-gradient-to-position)}.p-8{padding:2rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-8{padding-left:2rem;padding-right:2rem}.text-center{text-align:center}.font-handwriting{font-family:Georgia, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-medium{font-weight:500}.leading-relaxed{line-height:1.625}.text-accent{--tw-text-opacity:1;color:rgb(245 230 211 / var(--tw-text-opacity, 1))}.text-earth{--tw-text-opacity:1;color:rgb(160 82 45 / var(--tw-text-opacity, 1))}.text-error{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(139 115 85 / var(--tw-text-opacity, 1))}.text-warm{--tw-text-opacity:1;color:rgb(255 248 220 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }.float-animation {
+                animation: float 3s ease-in-out infinite;
+            }.pulse-glow {
+                animation: pulseGlow 2s ease-in-out infinite alternate;
+            }.fade-in {
+                animation: fadeIn 0.5s ease-in-out forwards;
+            }.slide-up {
+                animation: slideUp 0.6s ease-out forwards;
+            }
+        
+        @keyframes letterFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes treeholeEnter {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(10);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(245, 230, 211, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 40px rgba(245, 230, 211, 0.8);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes treeholeZoom {
+            0% {
+                transform: scale(0.3) translate(-50%, -50%);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) translate(-45%, -45%);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes darkenBackground {
+            from {
+                background-color: rgba(0, 0, 0, 0);
+            }
+            to {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        
+        @keyframes darkenReverse {
+            from {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            to {
+                background-color: rgba(0, 0, 0, 0);
+            }
+        }
+        
+        @keyframes errorShake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            75% {
+                transform: translateX(5px);
+            }
+        }
+        
+        .treehole-bg {
+            background-image: url('https://aka.doubaocdn.com/s/7s861w0Z9s');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .letter-card {
+            transition: all 0.3s ease;
+        }
+        
+        .letter-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .modal-backdrop {
+            -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+        }
+        
+        .user-info {
+            background: rgba(139, 115, 85, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+        }
+        
+        .tree-click-area {
+            position: absolute;
+            width: 40%;
+            height: 60%;
+            top: 20%;
+            left: 30%;
+            cursor: pointer;
+            z-index: 20;
+        }
+        
+        .treehole-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 30;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .darken-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            z-index: 15;
+            pointer-events: none;
+        }
+        
+        .hug-notification {
+            animation: hugNotification 4s ease-in-out forwards;
+        }
+        
+        @keyframes hugNotification {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            10% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            90% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+        
+        .stat-notification {
+            animation: statNotification 5s ease-in-out forwards;
+        }
+        
+        @keyframes statNotification {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            90% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+        
+        .hug-badge {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .hug-badge:hover {
+            transform: scale(1.1);
+            background-color: #dc2626 !important;
+        }
+        
+        .notification {
+            transition: all 0.3s ease;
+        }
+        
+        .notification:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .hover\:bg-earth:hover{--tw-bg-opacity:1;background-color:rgb(160 82 45 / var(--tw-bg-opacity, 1))}
+        
+        .hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(139 115 85 / var(--tw-bg-opacity, 1))}
+        
+        .hover\:bg-red-700:hover{--tw-bg-opacity:1;background-color:rgb(185 28 28 / var(--tw-bg-opacity, 1))}
+        
+        .hover\:bg-accent:hover{--tw-bg-opacity:1;background-color:rgb(245 230 211 / var(--tw-bg-opacity, 1))}
+        
+        .hover\:bg-secondary:hover{--tw-bg-opacity:1;background-color:rgb(212 184 150 / var(--tw-bg-opacity, 1))}
+        
+        .hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}
+        
+        .hover\:opacity-100:hover{opacity:1}
+        
+        .hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}
+        
+        .focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}
+        
+        .focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}
+        
+        .focus\:ring-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(139 115 85 / var(--tw-ring-opacity, 1))}
+        
+        .disabled\:cursor-not-allowed:disabled{cursor:not-allowed}
+        
+        .disabled\:opacity-50:disabled{opacity:0.5}
+        
+        @media (min-width: 768px){.md\:h-64{height:16rem}.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-8xl{font-size:6rem;line-height:1}}
+        
+        @media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}
+    </style></head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- 首页 - 树洞场景 -->
+    <div id="homePage" class="treehole-bg min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        
+        <!-- 可点击的树区域 -->
+        <div id="treeClickArea" class="tree-click-area">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-warm text-xl md:text-2xl text-shadow opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    点击大树，开始倾诉
+                </p>
+            </div>
+        </div>
+        
+        <!-- 放大的树洞按钮 -->
+        <div id="treeholeButton" class="treehole-button">
+            <div class="w-48 h-48 md:w-64 md:h-64 bg-earth rounded-full flex items-center justify-center cursor-pointer pulse-glow border-4 border-secondary">
+                <i class="fa fa-heart text-warm text-4xl md:text-6xl"></i>
+            </div>
+            <p class="text-center text-warm mt-4 text-lg font-handwriting">
+                进入树洞
+            </p>
+        </div>
+        
+        <!-- 暗化遮罩 -->
+        <div id="darkenOverlay" class="darken-overlay"></div>
+        
+        <!-- 标题 -->
+        <div class="text-center z-10 mb-20">
+            <h1 class="text-6xl md:text-8xl font-handwriting text-warm text-shadow mb-4 float-animation">
+                心灵树洞
+            </h1>
+            <p class="text-xl md:text-2xl text-accent text-shadow">
+                在这里，你的心声会被温柔聆听
+            </p>
+        </div>
+        
+        <!-- 登录注册按钮 / 用户信息 -->
+        <div id="userArea" class="absolute top-4 right-4 flex flex-col md:flex-row gap-3">
+            <button id="loginBtn" class="bg-primary hover:bg-earth text-warm px-4 py-2 rounded-lg transition-all duration-300">
+                <i class="fa fa-sign-in mr-2"></i>登录
+            </button>
+            <button id="registerBtn" class="bg-secondary hover:bg-primary text-earth px-4 py-2 rounded-lg transition-all duration-300">
+                <i class="fa fa-user-plus mr-2"></i>注册
+            </button>
+            <button id="resetDataBtn" class="bg-error hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-all duration-300">
+                <i class="fa fa-bullseye mr-2"></i>重置数据
+            </button>
+        </div>
+    </div>
+    
+    <!-- 登录提示模态框 -->
+    <div id="loginRequiredModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-backdrop absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative z-10 shadow-2xl slide-up">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center">
+                    <i class="fa fa-lock text-2xl text-warm"></i>
+                </div>
+                <h3 class="text-2xl font-handwriting text-primary mb-2">
+                    需要登录
+                </h3>
+                <p class="text-earth">
+                    请先登录或注册账号，才能使用树洞功能
+                </p>
+            </div>
+            
+            <div class="flex justify-center gap-4">
+                <button id="closeLoginRequiredModal" class="bg-earth hover:bg-primary text-warm px-6 py-2 rounded-lg transition-all duration-300">
+                    取消
+                </button>
+                <button id="goToLoginBtn" class="bg-primary hover:bg-earth text-warm px-6 py-2 rounded-lg transition-all duration-300">
+                    去登录
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 重置数据确认模态框 -->
+    <div id="resetDataModal" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-backdrop absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative z-10 shadow-2xl slide-up">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 bg-error rounded-full flex items-center justify-center">
+                    <i class="fa fa-exclamation-triangle text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-handwriting text-error mb-2">
+                    重置数据
+                </h3>
+                <p class="text-earth">
+                    此操作将清空所有用户数据、信件和拥抱记录，恢复到初始状态。
+                </p>
+                <p class="text-error font-medium mt-2">
+                    数据将无法恢复，请谨慎操作！
+                </p>
+            </div>
+            
+            <div class="flex justify-center gap-4">
+                <button id="cancelResetBtn" class="bg-earth hover:bg-primary text-warm px-6 py-2 rounded-lg transition-all duration-300">
+                    取消
+                </button>
+                <button id="confirmResetBtn" class="bg-error hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-all duration-300">
+                    确认重置
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 操作结果提示模态框 -->
+    <div id="resultModal" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-backdrop absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative z-10 shadow-2xl slide-up">
+            <div class="text-center mb-6">
+                <div id="resultIcon" class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
+                    <!-- 图标将通过JavaScript动态设置 -->
+                </div>
+                <h3 id="resultTitle" class="text-2xl font-handwriting mb-2">
+                    <!-- 标题将通过JavaScript动态设置 -->
+                </h3>
+                <p id="resultMessage" class="text-earth">
+                    <!-- 消息将通过JavaScript动态设置 -->
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <button id="closeResultModal" class="bg-primary hover:bg-earth text-warm px-6 py-2 rounded-lg transition-all duration-300">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 倾诉功能页面 -->
+    <div id="倾诉Page" class="hidden min-h-screen bg-gradient-to-b from-accent to-warm py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl font-handwriting text-primary mb-4">
+                    选择你的方式
+                </h2>
+                <p class="text-lg text-earth">
+                    在这里，你可以倾诉心声，也可以倾听他人的故事
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- 写信选项 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer letter-card slide-up" id="writeLetterBtn">
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center">
+                            <i class="fa fa-pencil text-3xl text-earth"></i>
+                        </div>
+                        <h3 class="text-2xl font-handwriting text-primary mb-4">
+                            写下心声
+                        </h3>
+                        <p class="text-earth">
+                            把你的烦恼、快乐或秘密写下来，匿名投入树洞中
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 窥探树洞选项 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer letter-card slide-up" id="exploreHoleBtn">
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center">
+                            <i class="fa fa-eye text-3xl text-warm"></i>
+                        </div>
+                        <h3 class="text-2xl font-handwriting text-primary mb-4">
+                            窥探树洞
+                        </h3>
+                        <p class="text-earth">
+                            进入树洞，看看其他人分享的故事和心声
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 返回首页按钮 -->
+            <div class="text-center mt-12 fade-in">
+                <button id="backToHomeBtn" class="bg-earth hover:bg-primary text-warm px-6 py-3 rounded-lg transition-all duration-300">
+                    <i class="fa fa-arrow-left mr-2"></i>返回树洞
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 写信页面 -->
+    <div id="writeLetterPage" class="hidden min-h-screen bg-gradient-to-b from-accent to-warm py-16">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="bg-white rounded-2xl p-8 shadow-xl slide-up">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-handwriting text-primary mb-4">
+                        写下你的心声
+                    </h2>
+                    <p class="text-earth">
+                        你的信件将以匿名形式保存在树洞中，只有你能收到他人的拥抱
+                    </p>
+                </div>
+                
+                <form id="letterForm" class="space-y-6">
+                    <div>
+                        <label for="letterTitle" class="block text-earth text-sm font-medium mb-2">
+                            信件标题（可选）
+                        </label>
+                        <input type="text" id="letterTitle" placeholder="给你的信件起个标题..." class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    
+                    <div>
+                        <label for="letterContent" class="block text-earth text-sm font-medium mb-2">
+                            信件内容
+                        </label>
+                        <textarea id="letterContent" rows="10" placeholder="在这里写下你的心声..." class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none" required=""></textarea>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <button type="button" id="backTo倾诉Btn" class="bg-earth hover:bg-primary text-warm px-6 py-3 rounded-lg transition-all duration-300">
+                            <i class="fa fa-arrow-left mr-2"></i>返回
+                        </button>
+                        <button type="submit" id="submitLetterBtn" class="bg-primary hover:bg-earth text-warm px-8 py-3 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <i class="fa fa-paper-plane mr-2"></i>投入树洞
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 树洞内部页面 -->
+    <div id="treeholeInsidePage" class="hidden min-h-screen bg-gradient-to-b from-earth to-primary py-16 relative overflow-hidden">
+        <!-- 背景信件飘落效果 -->
+        <div id="floatingLetters" class="absolute inset-0 pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-5xl font-handwriting text-warm text-shadow mb-4">
+                    树洞深处
+                </h2>
+                <p class="text-xl text-accent text-shadow">
+                    在这里，每一封信都承载着一个故事
+                </p>
+            </div>
+            
+            <!-- 信件网格 -->
+            <div id="lettersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- 信件卡片将通过JavaScript动态生成 -->
+            </div>
+            
+            <!-- 控制按钮 -->
+            <div class="text-center mt-12 flex justify-center gap-6 fade-in">
+                <button id="refreshLettersBtn" class="bg-secondary hover:bg-accent text-earth px-6 py-3 rounded-lg transition-all duration-300">
+                    <i class="fa fa-bullseye mr-2"></i>刷新信件
+                </button>
+                <button id="leaveTreeholeBtn" class="bg-accent hover:bg-secondary text-earth px-6 py-3 rounded-lg transition-all duration-300">
+                    <i class="fa fa-arrow-left mr-2"></i>离开树洞
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 信件详情模态框 -->
+    <div id="letterModal" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-backdrop absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-2xl w-full mx-4 relative z-10 shadow-2xl slide-up">
+            <div class="text-center mb-6">
+                <h3 id="modalLetterTitle" class="text-3xl font-handwriting text-primary mb-2"></h3>
+                <p id="modalLetterDate" class="text-earth text-sm"></p>
+            </div>
+            
+            <div id="modalLetterContent" class="text-earth text-lg leading-relaxed mb-8 p-6 bg-accent rounded-lg">
+                <!-- 信件内容将通过JavaScript动态生成 -->
+            </div>
+            
+            <div class="flex justify-between items-center">
+                <button id="sendHugBtn" class="bg-primary hover:bg-earth text-warm px-6 py-3 rounded-lg transition-all duration-300">
+                    <i class="fa fa-heart mr-2"></i>发送拥抱
+                </button>
+                <button id="closeModalBtn" class="bg-earth hover:bg-primary text-warm px-6 py-3 rounded-lg transition-all duration-300">
+                    <i class="fa fa-times mr-2"></i>关闭
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-backdrop absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative z-10 shadow-2xl slide-up">
+            <div class="text-center mb-6">
+                <h3 class="text-3xl font-handwriting text-primary mb-2">
+                    登录
+                </h3>
+                <p class="text-earth">
+                    登录你的账号，管理你的信件和拥抱
+                </p>
+            </div>
+            
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="loginUsername" class="block text-earth text-sm font-medium mb-2">
+                        用户名
+                    </label>
+                    <input type="text" id="loginUsername" placeholder="请输入用户名" class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required="">
+                </div>
+                
+                <div>
+                    <label for="loginPassword" class="block text-earth text-sm font-medium mb-2">
+                        密码
+                    </label>
+                    <input type="password" id="loginPassword" placeholder="请输入密码" class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required="">
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <button type="button" id="closeLoginModal" class="bg-earth hover:bg-primary text-warm px-4 py-2 rounded-lg transition-all duration-300">
+                        关闭
+                    </button>
+                    <button type="submit" class="bg-primary hover:bg-earth text-warm px-6 py-2 rounded-lg transition-all duration-300">
+                        登录
+                    </button>
+                </div>
+            </form>
+            
+            <div class="text-center mt-4">
+                <p class="text-earth text-sm">
+                    还没有账号？<button id="switchToRegister" class="text-primary hover:underline">立即注册</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 注册模态框 -->
+    <div id="registerModal" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-backdrop absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative z-10 shadow-2xl slide-up">
+            <div class="text-center mb-6">
+                <h3 class="text-3xl font-handwriting text-primary mb-2">
+                    注册
+                </h3>
+                <p class="text-earth">
+                    创建你的账号，开始使用树洞服务
+                </p>
+            </div>
+            
+            <form id="registerForm" class="space-y-4">
+                <div>
+                    <label for="registerUsername" class="block text-earth text-sm font-medium mb-2">
+                        用户名
+                    </label>
+                    <input type="text" id="registerUsername" placeholder="请输入用户名" class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required="">
+                </div>
+                
+                <div>
+                    <label for="registerEmail" class="block text-earth text-sm font-medium mb-2">
+                        邮箱
+                    </label>
+                    <input type="email" id="registerEmail" placeholder="请输入邮箱" class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required="">
+                </div>
+                
+                <div>
+                    <label for="registerPassword" class="block text-earth text-sm font-medium mb-2">
+                        密码
+                    </label>
+                    <input type="password" id="registerPassword" placeholder="请输入密码" class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required="">
+                </div>
+                
+                <div>
+                    <label for="confirmPassword" class="block text-earth text-sm font-medium mb-2">
+                        确认密码
+                    </label>
+                    <input type="password" id="confirmPassword" placeholder="请再次输入密码" class="w-full px-4 py-3 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required="">
+                </div>
+                
+                <div class="flex justify-between items-center">
+                    <button type="button" id="closeRegisterModal" class="bg-earth hover:bg-primary text-warm px-4 py-2 rounded-lg transition-all duration-300">
+                        关闭
+                    </button>
+                    <button type="submit" class="bg-primary hover:bg-earth text-warm px-6 py-2 rounded-lg transition-all duration-300">
+                        注册
+                    </button>
+                </div>
+            </form>
+            
+            <div class="text-center mt-4">
+                <p class="text-earth text-sm">
+                    已有账号？<button id="switchToLogin" class="text-primary hover:underline">立即登录</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 拥抱通知 -->
+    <div id="hugNotification" class="hidden fixed top-4 right-4 bg-primary text-warm px-6 py-3 rounded-lg shadow-lg z-50 slide-up cursor-pointer notification">
+        <div class="flex items-center">
+            <i class="fa fa-heart mr-2"></i>
+            <span>有人给你的信件发送了一个拥抱！</span>
+        </div>
+    </div>
+    
+    <!-- 实时拥抱通知 -->
+    <div id="realTimeHugNotification" class="hidden fixed bottom-4 left-4 bg-rose-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 hug-notification cursor-pointer notification">
+        <div class="flex items-center">
+            <i class="fa fa-heart mr-2"></i>
+            <span>💖 有人刚刚给你的信件发送了一个温暖的拥抱！</span>
+        </div>
+    </div>
+    
+    <!-- 拥抱统计通知 -->
+    <div id="hugCountNotification" class="hidden fixed top-12 left-4 bg-hugCount text-white px-6 py-3 rounded-lg shadow-lg z-50 stat-notification cursor-pointer notification">
+        <div class="flex items-center">
+            <i class="fa fa-heart mr-2"></i>
+            <span id="hugCountText">你从注册以来一共收到了 X 个拥抱！</span>
+        </div>
+    </div>
+    
+    <!-- 鲜花统计通知 -->
+    <div id="flowerCountNotification" class="hidden fixed top-24 left-4 bg-flower text-white px-6 py-3 rounded-lg shadow-lg z-50 stat-notification cursor-pointer notification">
+        <div class="flex items-center">
+            <i class="fa fa-bullseye mr-2"></i>
+            <span id="flowerCountText">你一共获得了 X 朵鲜花！</span>
+        </div>
+    </div>
+    
+    <!-- 新拥抱提醒通知 -->
+    <div id="newHugReminder" class="hidden fixed top-36 left-4 bg-rose-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 stat-notification cursor-pointer notification">
+        <div class="flex items-center">
+            <i class="fa fa-heart mr-2"></i>
+            <span id="newHugReminderText">你有 X 个新的拥抱！</span>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let currentUser = null;
+        let letters = [];
+        let users = [];
+        
+        // 页面元素
+        const homePage = document.getElementById('homePage');
+        const 倾诉Page = document.getElementById('倾诉Page');
+        const writeLetterPage = document.getElementById('writeLetterPage');
+        const treeholeInsidePage = document.getElementById('treeholeInsidePage');
+        const letterModal = document.getElementById('letterModal');
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const loginRequiredModal = document.getElementById('loginRequiredModal');
+        const resetDataModal = document.getElementById('resetDataModal');
+        const resultModal = document.getElementById('resultModal');
+        
+        // 初始化数据
+        function initData() {
+            try {
+                // 从localStorage加载数据
+                if (localStorage.getItem('users')) {
+                    users = JSON.parse(localStorage.getItem('users'));
+                    
+                    // 数据验证：确保用户数据格式正确
+                    if (!Array.isArray(users)) {
+                        throw new Error('用户数据格式不正确');
+                    }
+                    
+                    // 检查是否有重复的用户名
+                    const usernames = new Set();
+                    const uniqueUsers = [];
+                    
+                    users.forEach(user => {
+                        // 验证用户数据结构
+                        if (user && user.id && user.username && user.password && user.email) {
+                            if (!usernames.has(user.username)) {
+                                usernames.add(user.username);
+                                uniqueUsers.push(user);
+                            } else {
+                                console.warn(`发现重复用户名: ${user.username}，已自动去重`);
+                            }
+                        }
+                    });
+                    
+                    users = uniqueUsers;
+                    localStorage.setItem('users', JSON.stringify(users));
+                } else {
+                    // 创建默认测试用户
+                    users = [
+                        {
+                            id: 1,
+                            username: 'testuser1',
+                            password: '123456',
+                            email: 'test1@example.com',
+                            letters: [],
+                            hugsReceived: [],
+                            flowers: 0,
+                            lastLoginDate: null
+                        },
+                        {
+                            id: 2,
+                            username: 'testuser2',
+                            password: '123456',
+                            email: 'test2@example.com',
+                            letters: [],
+                            hugsReceived: [],
+                            flowers: 0,
+                            lastLoginDate: null
+                        }
+                    ];
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
+                
+                if (localStorage.getItem('letters')) {
+                    letters = JSON.parse(localStorage.getItem('letters'));
+                    
+                    // 数据验证：确保信件数据格式正确
+                    if (!Array.isArray(letters)) {
+                        throw new Error('信件数据格式不正确');
+                    }
+                    
+                    // 过滤掉无效的信件
+                    const validLetters = letters.filter(letter => 
+                        letter && letter.id && letter.title && letter.content && letter.authorId && letter.date
+                    );
+                    
+                    letters = validLetters;
+                    localStorage.setItem('letters', JSON.stringify(letters));
+                } else {
+                    // 创建默认测试信件
+                    letters = [
+                        {
+                            id: 1,
+                            title: '我的小秘密',
+                            content: '今天我偷偷买了一块蛋糕，没有和家人分享，感觉有点内疚，但真的很好吃。',
+                            authorId: 1,
+                            date: '2026-02-01',
+                            hugs: 5
+                        },
+                        {
+                            id: 2,
+                            title: '工作的烦恼',
+                            content: '最近工作压力好大，感觉自己快要撑不下去了，不知道该怎么办。',
+                            authorId: 2,
+                            date: '2026-02-02',
+                            hugs: 12
+                        },
+                        {
+                            id: 3,
+                            title: '暗恋的心情',
+                            content: '我喜欢上了公司的同事，但不敢告诉他，每天能看到他就很开心了。',
+                            authorId: 1,
+                            date: '2026-02-03',
+                            hugs: 8
+                        }
+                    ];
+                    localStorage.setItem('letters', JSON.stringify(letters));
+                }
+                
+                // 检查当前登录状态
+                if (localStorage.getItem('currentUser')) {
+                    try {
+                        currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                        
+                        // 验证当前用户是否存在于用户列表中
+                        const userExists = users.some(user => user.id === currentUser.id);
+                        if (!userExists) {
+                            throw new Error('当前登录用户不存在于用户列表中');
+                        }
+                        
+                        updateUserArea();
+                        checkForNewHugs();
+                        showDailyStats();
+                    } catch (error) {
+                        console.error('当前用户数据无效:', error);
+                        localStorage.removeItem('currentUser');
+                        currentUser = null;
+                        updateUserArea();
+                    }
+                }
+            } catch (error) {
+                console.error('数据初始化失败:', error);
+                showResultModal('错误', '数据加载失败，建议重置数据', 'error');
+            }
+        }
+        
+        // 更新用户区域显示
+        function updateUserArea() {
+            const userArea = document.getElementById('userArea');
+            
+            if (currentUser) {
+                // 检查是否有未读拥抱
+                const userIndex = users.findIndex(user => user.id === currentUser.id);
+                const unreadHugs = userIndex !== -1 ? users[userIndex].hugsReceived.filter(hug => !hug.isRead).length : 0;
+                
+                // 显示用户信息和退出按钮
+                if (unreadHugs > 0) {
+                    userArea.innerHTML = `
+                        <div class="user-info text-warm px-4 py-2 rounded-lg flex items-center gap-3">
+                            <i class="fa fa-user"></i>
+                            <span>${currentUser.username}</span>
+                            <span id="hugBadge" class="bg-rose-600 text-white text-xs px-2 py-1 rounded-full hug-badge">${unreadHugs}个新拥抱</span>
+                        </div>
+                        <button id="logoutBtn" class="bg-earth hover:bg-primary text-warm px-4 py-2 rounded-lg transition-all duration-300">
+                            <i class="fa fa-sign-out mr-2"></i>退出
+                        </button>
+                        <button id="resetDataBtn" class="bg-error hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-all duration-300">
+                            <i class="fa fa-bullseye mr-2"></i>重置数据
+                        </button>
+                    `;
+                    
+                    // 绑定拥抱徽章点击事件
+                    document.getElementById('hugBadge').addEventListener('click', function() {
+                        // 点击后更新为正常用户信息
+                        updateUserArea();
+                        
+                        // 显示拥抱统计详情
+                        const totalHugs = users.find(user => user.id === currentUser.id).hugsReceived.length;
+                        const hugCountText = document.getElementById('hugCountText');
+                        hugCountText.textContent = `你从注册以来一共收到了 ${totalHugs} 个拥抱！`;
+                        
+                        const hugCountNotification = document.getElementById('hugCountNotification');
+                        hugCountNotification.classList.remove('hidden');
+                    });
+                } else {
+                    userArea.innerHTML = `
+                        <div class="user-info text-warm px-4 py-2 rounded-lg flex items-center gap-3">
+                            <i class="fa fa-user"></i>
+                            <span>${currentUser.username}</span>
+                        </div>
+                        <button id="logoutBtn" class="bg-earth hover:bg-primary text-warm px-4 py-2 rounded-lg transition-all duration-300">
+                            <i class="fa fa-sign-out mr-2"></i>退出
+                        </button>
+                        <button id="resetDataBtn" class="bg-error hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-all duration-300">
+                            <i class="fa fa-bullseye mr-2"></i>重置数据
+                        </button>
+                    `;
+                }
+                
+                // 绑定退出登录事件
+                document.getElementById('logoutBtn').addEventListener('click', logout);
+            } else {
+                // 显示登录注册按钮
+                userArea.innerHTML = `
+                    <button id="loginBtn" class="bg-primary hover:bg-earth text-warm px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fa fa-sign-in mr-2"></i>登录
+                    </button>
+                    <button id="registerBtn" class="bg-secondary hover:bg-primary text-earth px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fa fa-user-plus mr-2"></i>注册
+                    </button>
+                    <button id="resetDataBtn" class="bg-error hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-all duration-300">
+                        <i class="fa fa-bullseye mr-2"></i>重置数据
+                    </button>
+                `;
+                
+                // 绑定登录注册事件
+                document.getElementById('loginBtn').addEventListener('click', () => showModal('loginModal'));
+                document.getElementById('registerBtn').addEventListener('click', () => showModal('registerModal'));
+            }
+            
+            // 绑定重置数据事件
+            document.getElementById('resetDataBtn').addEventListener('click', () => showModal('resetDataModal'));
+        }
+        
+        // 检查登录状态
+        function checkLoginStatus() {
+            if (!currentUser) {
+                showModal('loginRequiredModal');
+                return false;
+            }
+            return true;
+        }
+        
+        // 页面切换函数
+        function showPage(pageId) {
+            // 隐藏所有页面
+            const pages = [homePage, 倾诉Page, writeLetterPage, treeholeInsidePage];
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // 显示指定页面
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+        
+        // 显示模态框
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+        
+        // 隐藏模态框
+        function hideModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+        
+        // 显示结果模态框
+        function showResultModal(title, message, type = 'info') {
+            const resultTitle = document.getElementById('resultTitle');
+            const resultMessage = document.getElementById('resultMessage');
+            const resultIcon = document.getElementById('resultIcon');
+            
+            resultTitle.textContent = title;
+            resultMessage.textContent = message;
+            
+            // 设置图标
+            if (type === 'success') {
+                resultIcon.className = 'w-16 h-16 mx-auto mb-4 bg-success rounded-full flex items-center justify-center';
+                resultIcon.innerHTML = '<i class="fa fa-check text-2xl text-white"></i>';
+                resultTitle.className = 'text-2xl font-handwriting text-success mb-2';
+            } else if (type === 'error') {
+                resultIcon.className = 'w-16 h-16 mx-auto mb-4 bg-error rounded-full flex items-center justify-center';
+                resultIcon.innerHTML = '<i class="fa fa-times text-2xl text-white"></i>';
+                resultTitle.className = 'text-2xl font-handwriting text-error mb-2';
+            } else {
+                resultIcon.className = 'w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center';
+                resultIcon.innerHTML = '<i class="fa fa-info text-2xl text-warm"></i>';
+                resultTitle.className = 'text-2xl font-handwriting text-primary mb-2';
+            }
+            
+            showModal('resultModal');
+        }
+        
+        // 生成随机信件（排除当前用户的信件，确保不重复）
+        function generateRandomLetters(count) {
+            try {
+                // 过滤掉当前用户的信件
+                const otherLetters = letters.filter(letter => letter.authorId !== currentUser.id);
+                
+                // 如果没有其他用户的信件，创建一些示例信件
+                if (otherLetters.length === 0) {
+                    const sampleLetters = [
+                        {
+                            title: '我的梦想',
+                            content: '我一直想成为一名画家，但家人希望我找一份稳定的工作。我不知道该如何选择。',
+                            authorId: 999, // 使用不存在的用户ID
+                            date: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                            hugs: Math.floor(Math.random() * 20)
+                        },
+                        {
+                            title: '友谊的困惑',
+                            content: '最近和最好的朋友吵架了，我们已经一个星期没有说话了，我很想念她。',
+                            authorId: 998, // 使用不存在的用户ID
+                            date: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                            hugs: Math.floor(Math.random() * 15)
+                        },
+                        {
+                            title: '对未来的迷茫',
+                            content: '大学毕业了，我不知道自己想做什么，感觉很迷茫，每天都在焦虑中度过。',
+                            authorId: 997,
+                            date: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                            hugs: Math.floor(Math.random() * 18)
+                        },
+                        {
+                            title: '家庭的温暖',
+                            content: '今天妈妈做了我最爱吃的菜，虽然只是简单的家常菜，但我感受到了满满的爱。',
+                            authorId: 996,
+                            date: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                            hugs: Math.floor(Math.random() * 25)
+                        }
+                    ];
+                    
+                    // 随机选择信件，确保不重复
+                    const randomLetters = [];
+                    const selectedIds = new Set();
+                    for (let i = 0; i < count && selectedIds.size < sampleLetters.length; i++) {
+                        const randomIndex = Math.floor(Math.random() * sampleLetters.length);
+                        const letter = sampleLetters[randomIndex];
+                        if (!selectedIds.has(letter.title)) {
+                            selectedIds.add(letter.title);
+                            randomLetters.push({
+                                ...letter,
+                                id: Date.now() + i
+                            });
+                        }
+                    }
+                    
+                    return randomLetters;
+                }
+                
+                // 随机选择不重复的信件
+                const randomLetters = [];
+                const selectedIds = new Set();
+                
+                while (randomLetters.length < count && selectedIds.size < otherLetters.length) {
+                    const randomIndex = Math.floor(Math.random() * otherLetters.length);
+                    const letter = otherLetters[randomIndex];
+                    if (!selectedIds.has(letter.id)) {
+                        selectedIds.add(letter.id);
+                        randomLetters.push(letter);
+                    }
+                }
+                
+                return randomLetters;
+            } catch (error) {
+                console.error('生成随机信件失败:', error);
+                showResultModal('错误', '加载信件失败，请重试', 'error');
+                return [];
+            }
+        }
+        
+        // 渲染信件网格
+        function renderLettersGrid() {
+            try {
+                const lettersGrid = document.getElementById('lettersGrid');
+                lettersGrid.innerHTML = '';
+                
+                // 随机选择6-9封不重复的信件
+                const randomLetters = generateRandomLetters(Math.floor(Math.random() * 4) + 6);
+                
+                randomLetters.forEach(letter => {
+                    const letterCard = document.createElement('div');
+                    letterCard.className = 'bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer letter-card';
+                    letterCard.innerHTML = `
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center">
+                                <img src="https://aka.doubaocdn.com/s/y4NV1w0ZA3" alt="信件" class="w-8 h-8">
+                            </div>
+                            <h4 class="text-lg font-handwriting text-primary mb-2">${letter.title}</h4>
+                            <p class="text-earth text-sm mb-3">${letter.content.substring(0, 50)}...</p>
+                            <div class="flex items-center justify-center text-primary">
+                                <i class="fa fa-heart mr-1"></i>
+                                <span>${letter.hugs}</span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    letterCard.addEventListener('click', () => {
+                        showLetterModal(letter);
+                    });
+                    
+                    lettersGrid.appendChild(letterCard);
+                });
+            } catch (error) {
+                console.error('渲染信件网格失败:', error);
+                showResultModal('错误', '加载信件失败，请重试', 'error');
+            }
+        }
+        
+        // 显示信件详情模态框
+        function showLetterModal(letter) {
+            try {
+                document.getElementById('modalLetterTitle').textContent = letter.title;
+                document.getElementById('modalLetterDate').textContent = `写于 ${letter.date}`;
+                document.getElementById('modalLetterContent').textContent = letter.content;
+                
+                // 保存当前信件ID，用于发送拥抱
+                document.getElementById('sendHugBtn').dataset.letterId = letter.id;
+                document.getElementById('sendHugBtn').dataset.authorId = letter.authorId;
+                
+                showModal('letterModal');
+            } catch (error) {
+                console.error('显示信件详情失败:', error);
+                showResultModal('错误', '加载信件详情失败，请重试', 'error');
+            }
+        }
+        
+        // 发送拥抱
+        function sendHug(letterId, authorId) {
+            try {
+                if (!currentUser) {
+                    alert('请先登录才能发送拥抱');
+                    showModal('loginModal');
+                    return;
+                }
+                
+                // 找到对应的信件并增加拥抱数
+                const letterIndex = letters.findIndex(letter => letter.id == letterId);
+                if (letterIndex !== -1) {
+                    letters[letterIndex].hugs++;
+                    localStorage.setItem('letters', JSON.stringify(letters));
+                }
+                
+                // 检查作者是否当前在线（在当前标签页）
+                const isAuthorOnline = localStorage.getItem('currentUser') && 
+                    JSON.parse(localStorage.getItem('currentUser')).id == authorId;
+                
+                // 创建拥抱记录
+                const hugRecord = {
+                    letterId: letterId,
+                    fromUser: currentUser.username,
+                    date: new Date().toISOString().split('T')[0],
+                    time: new Date().toLocaleTimeString(),
+                    isRead: false
+                };
+                
+                // 如果作者当前在线，直接添加拥抱记录并显示实时通知
+                if (isAuthorOnline) {
+                    const authorIndex = users.findIndex(user => user.id == authorId);
+                    if (authorIndex !== -1) {
+                        users[authorIndex].hugsReceived.push(hugRecord);
+                        localStorage.setItem('users', JSON.stringify(users));
+                        
+                        // 显示实时拥抱通知
+                        showRealTimeHugNotification();
+                        
+                        // 更新用户区域显示
+                        updateUserArea();
+                    }
+                } else {
+                    // 如果作者不在线，将拥抱记录存储到localStorage
+                    localStorage.setItem('hugNotification_' + authorId, JSON.stringify(hugRecord));
+                    
+                    // 发送浏览器通知
+                    if (Notification.permission === 'granted') {
+                        new Notification('收到新拥抱！', {
+                            body: `${currentUser.username}给你的信件发送了一个温暖的拥抱！`,
+                            icon: 'https://aka.doubaocdn.com/s/hDii1w0ZA2'
+                        });
+                    }
+                }
+                
+                // 给发送拥抱的用户增加鲜花
+                const senderIndex = users.findIndex(user => user.id == currentUser.id);
+                if (senderIndex !== -1) {
+                    users[senderIndex].flowers = (users[senderIndex].flowers || 0) + 1;
+                    localStorage.setItem('users', JSON.stringify(users));
+                    
+                    // 更新当前用户对象
+                    currentUser.flowers = users[senderIndex].flowers;
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    
+                    // 显示获得鲜花的提示
+                    showFlowerNotification();
+                }
+                
+                // 显示拥抱成功提示
+                showResultModal('成功', '拥抱已发送！你获得了1朵鲜花！', 'success');
+                hideModal('letterModal');
+                renderLettersGrid();
+            } catch (error) {
+                console.error('发送拥抱失败:', error);
+                showResultModal('错误', '发送拥抱失败，请重试', 'error');
+            }
+        }
+        
+        // 显示实时拥抱通知
+        function showRealTimeHugNotification() {
+            const realTimeHugNotification = document.getElementById('realTimeHugNotification');
+            realTimeHugNotification.classList.remove('hidden');
+            
+            setTimeout(() => {
+                realTimeHugNotification.classList.add('hidden');
+            }, 4000);
+        }
+        
+        // 显示鲜花通知
+        function showFlowerNotification() {
+            const flowerNotification = document.getElementById('flowerCountNotification');
+            const flowerCountText = document.getElementById('flowerCountText');
+            flowerCountText.textContent = `你获得了1朵鲜花！总共拥有 ${currentUser.flowers} 朵鲜花！`;
+            
+            flowerNotification.classList.remove('hidden');
+            
+            setTimeout(() => {
+                flowerNotification.classList.add('hidden');
+            }, 5000);
+        }
+        
+        // 检查新的拥抱通知
+        function checkForNewHugs() {
+            try {
+                if (!currentUser) return 0;
+                
+                let newHugCount = 0;
+                
+                // 检查localStorage中的新拥抱通知
+                const hugNotification = localStorage.getItem('hugNotification_' + currentUser.id);
+                if (hugNotification) {
+                    const hugRecord = JSON.parse(hugNotification);
+                    
+                    // 将拥抱记录添加到用户的hugsReceived列表
+                    const userIndex = users.findIndex(user => user.id == currentUser.id);
+                    if (userIndex !== -1) {
+                        users[userIndex].hugsReceived.push(hugRecord);
+                        localStorage.setItem('users', JSON.stringify(users));
+                        localStorage.removeItem('hugNotification_' + currentUser.id);
+                        
+                        // 显示实时拥抱通知
+                        showRealTimeHugNotification();
+                        
+                        newHugCount++;
+                    }
+                }
+                
+                // 检查未读拥抱
+                const userIndex = users.findIndex(user => user.id == currentUser.id);
+                if (userIndex !== -1) {
+                    const unreadHugs = users[userIndex].hugsReceived.filter(hug => !hug.isRead);
+                    newHugCount = unreadHugs.length;
+                    
+                    if (newHugCount > 0) {
+                        // 显示新拥抱提醒
+                        const newHugReminder = document.getElementById('newHugReminder');
+                        const newHugReminderText = document.getElementById('newHugReminderText');
+                        newHugReminderText.textContent = `你有 ${newHugCount} 个新的拥抱！`;
+                        newHugReminder.classList.remove('hidden');
+                        
+                        // 标记为已读
+                        unreadHugs.forEach(hug => {
+                            hug.isRead = true;
+                        });
+                        localStorage.setItem('users', JSON.stringify(users));
+                    }
+                }
+                
+                // 更新用户区域显示
+                updateUserArea();
+                
+                return newHugCount;
+            } catch (error) {
+                console.error('检查新拥抱失败:', error);
+                return 0;
+            }
+        }
+        
+        // 显示每日统计信息
+        function showDailyStats() {
+            try {
+                if (!currentUser) return;
+                
+                const today = new Date().toISOString().split('T')[0];
+                const userIndex = users.findIndex(user => user.id == currentUser.id);
+                
+                if (userIndex !== -1) {
+                    const user = users[userIndex];
+                    
+                    // 检查是否是当天首次登录
+                    if (!user.lastLoginDate || user.lastLoginDate !== today) {
+                        // 更新最后登录日期
+                        user.lastLoginDate = today;
+                        localStorage.setItem('users', JSON.stringify(users));
+                        
+                        // 更新当前用户对象
+                        currentUser.lastLoginDate = today;
+                        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                        
+                        // 显示拥抱统计
+                        const totalHugs = user.hugsReceived.length;
+                        if (totalHugs > 0) {
+                            const hugCountText = document.getElementById('hugCountText');
+                            hugCountText.textContent = `你从注册以来一共收到了 ${totalHugs} 个拥抱！`;
+                            
+                            const hugCountNotification = document.getElementById('hugCountNotification');
+                            hugCountNotification.classList.remove('hidden');
+                        }
+                    }
+                    
+                    // 显示鲜花统计
+                    const totalFlowers = user.flowers || 0;
+                    if (totalFlowers > 0) {
+                        const flowerCountText = document.getElementById('flowerCountText');
+                        flowerCountText.textContent = `你一共获得了 ${totalFlowers} 朵鲜花！`;
+                        
+                        const flowerCountNotification = document.getElementById('flowerCountNotification');
+                        flowerCountNotification.classList.remove('hidden');
+                    }
+                }
+            } catch (error) {
+                console.error('显示每日统计失败:', error);
+            }
+        }
+        
+        // 注册用户
+        function registerUser(username, email, password) {
+            try {
+                // 检查用户名是否已存在
+                if (users.find(user => user.username === username)) {
+                    showResultModal('错误', '用户名已存在，请选择其他用户名', 'error');
+                    return false;
+                }
+                
+                // 检查邮箱是否已存在
+                if (users.find(user => user.email === email)) {
+                    showResultModal('错误', '邮箱已被注册，请使用其他邮箱', 'error');
+                    return false;
+                }
+                
+                // 创建新用户
+                const newUser = {
+                    id: Date.now(),
+                    username: username,
+                    email: email,
+                    password: password,
+                    letters: [],
+                    hugsReceived: [],
+                    flowers: 0,
+                    lastLoginDate: null
+                };
+                
+                users.push(newUser);
+                localStorage.setItem('users', JSON.stringify(users));
+                
+                // 自动登录
+                currentUser = newUser;
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                updateUserArea();
+                
+                showResultModal('成功', '注册成功！欢迎来到心灵树洞', 'success');
+                hideModal('registerModal');
+                return true;
+            } catch (error) {
+                console.error('注册用户失败:', error);
+                showResultModal('错误', '注册失败，请重试', 'error');
+                return false;
+            }
+        }
+        
+        // 登录用户
+        function loginUser(username, password) {
+            try {
+                // 查找用户
+                const user = users.find(user => user.username === username && user.password === password);
+                
+                if (!user) {
+                    // 如果没有找到，检查是否有重复用户名的情况
+                    const usersWithSameName = users.filter(u => u.username === username);
+                    
+                    if (usersWithSameName.length > 0) {
+                        // 有重复用户名，但密码不匹配
+                        showResultModal('错误', '用户名或密码错误', 'error');
+                        
+                        // 添加错误抖动效果
+                        const loginForm = document.getElementById('loginForm');
+                        loginForm.classList.add('error-shake');
+                        setTimeout(() => {
+                            loginForm.classList.remove('error-shake');
+                        }, 500);
+                    } else {
+                        // 用户名不存在
+                        showResultModal('错误', '用户名或密码错误', 'error');
+                        
+                        // 添加错误抖动效果
+                        const loginForm = document.getElementById('loginForm');
+                        loginForm.classList.add('error-shake');
+                        setTimeout(() => {
+                            loginForm.classList.remove('error-shake');
+                        }, 500);
+                    }
+                    return false;
+                }
+                
+                currentUser = user;
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                updateUserArea();
+                
+                // 检查是否有未读拥抱通知
+                const newHugCount = checkForNewHugs();
+                
+                // 显示每日统计信息
+                showDailyStats();
+                
+                // 如果有新拥抱，显示提醒
+                if (newHugCount > 0) {
+                    const newHugReminder = document.getElementById('newHugReminder');
+                    const newHugReminderText = document.getElementById('newHugReminderText');
+                    newHugReminderText.textContent = `你有 ${newHugCount} 个新的拥抱！`;
+                    newHugReminder.classList.remove('hidden');
+                }
+                
+                showResultModal('成功', '登录成功！欢迎回来', 'success');
+                hideModal('loginModal');
+                return true;
+            } catch (error) {
+                console.error('登录用户失败:', error);
+                showResultModal('错误', '登录失败，请重试', 'error');
+                return false;
+            }
+        }
+        
+        // 退出登录
+        function logout() {
+            try {
+                currentUser = null;
+                localStorage.removeItem('currentUser');
+                updateUserArea();
+                showPage('homePage');
+                showResultModal('成功', '已退出登录', 'success');
+            } catch (error) {
+                console.error('退出登录失败:', error);
+                showResultModal('错误', '退出登录失败，请重试', 'error');
+            }
+        }
+        
+        // 重置数据
+        function resetData() {
+            try {
+                // 清空localStorage
+                localStorage.removeItem('users');
+                localStorage.removeItem('letters');
+                localStorage.removeItem('currentUser');
+                
+                // 清除所有拥抱通知
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith('hugNotification_')) {
+                        localStorage.removeItem(key);
+                        i--; // 因为删除了一个元素，所以索引需要减1
+                    }
+                }
+                
+                // 重新初始化数据
+                initData();
+                
+                // 重置页面状态
+                showPage('homePage');
+                hideModal('resetDataModal');
+                showResultModal('成功', '数据已重置，恢复到初始状态', 'success');
+            } catch (error) {
+                console.error('重置数据失败:', error);
+                showResultModal('错误', '重置数据失败，请重试', 'error');
+            }
+        }
+        
+        // 提交信件
+        function submitLetter(title, content) {
+            try {
+                if (!currentUser) {
+                    alert('请先登录才能提交信件');
+                    showModal('loginModal');
+                    return false;
+                }
+                
+                const newLetter = {
+                    id: Date.now(),
+                    title: title || '无题',
+                    content: content,
+                    authorId: currentUser.id,
+                    date: new Date().toISOString().split('T')[0],
+                    hugs: 0
+                };
+                
+                letters.push(newLetter);
+                localStorage.setItem('letters', JSON.stringify(letters));
+                
+                // 将信件添加到用户的信件列表
+                const userIndex = users.findIndex(user => user.id === currentUser.id);
+                if (userIndex !== -1) {
+                    users[userIndex].letters.push(newLetter.id);
+                    localStorage.setItem('users', JSON.stringify(users));
+                }
+                
+                showResultModal('成功', '信件已投入树洞！', 'success');
+                showPage('倾诉Page');
+                return true;
+            } catch (error) {
+                console.error('提交信件失败:', error);
+                showResultModal('错误', '提交信件失败，请重试', 'error');
+                return false;
+            }
+        }
+        
+        // 创建漂浮信件效果
+        function createFloatingLetters() {
+            try {
+                const floatingLetters = document.getElementById('floatingLetters');
+                floatingLetters.innerHTML = '';
+                
+                for (let i = 0; i < 10; i++) {
+                    const letter = document.createElement('div');
+                    letter.className = 'absolute letter-fall';
+                    letter.style.left = Math.random() * 100 + '%';
+                    letter.style.animationDelay = Math.random() * 5 + 's';
+                    letter.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                    letter.style.opacity = Math.random() * 0.5 + 0.2;
+                    
+                    // 随机选择信件图片
+                    const letterImages = [
+                        'https://aka.doubaocdn.com/s/hDii1w0ZA2',
+                        'https://aka.doubaocdn.com/s/y4NV1w0ZA3',
+                        'https://aka.doubaocdn.com/s/meUU1w0ZA3'
+                    ];
+                    
+                    letter.innerHTML = `
+                        <img src="${letterImages[Math.floor(Math.random() * letterImages.length)]}" 
+                             alt="漂浮信件" 
+                             class="w-16 h-16 object-contain transform rotate-${Math.random() * 360}">
+                    `;
+                    
+                    floatingLetters.appendChild(letter);
+                }
+            } catch (error) {
+                console.error('创建漂浮信件效果失败:', error);
+            }
+        }
+        
+        // 树点击事件处理
+        function handleTreeClick() {
+            if (!checkLoginStatus()) {
+                return;
+            }
+            
+            // 显示暗化遮罩
+            const darkenOverlay = document.getElementById('darkenOverlay');
+            darkenOverlay.classList.add('darken-background');
+            darkenOverlay.style.pointerEvents = 'auto';
+            
+            // 显示放大的树洞按钮
+            const treeholeButton = document.getElementById('treeholeButton');
+            treeholeButton.classList.add('treehole-zoom');
+            treeholeButton.style.opacity = '1';
+            treeholeButton.style.pointerEvents = 'auto';
+            
+            // 隐藏树点击区域
+            document.getElementById('treeClickArea').style.pointerEvents = 'none';
+        }
+        
+        // 放大树洞按钮点击事件
+        function handleTreeholeButtonClick() {
+            // 隐藏树洞按钮和遮罩
+            const treeholeButton = document.getElementById('treeholeButton');
+            const darkenOverlay = document.getElementById('darkenOverlay');
+            
+            treeholeButton.classList.remove('treehole-zoom');
+            treeholeButton.style.opacity = '0';
+            treeholeButton.style.pointerEvents = 'none';
+            
+            darkenOverlay.classList.remove('darken-background');
+            darkenOverlay.style.pointerEvents = 'none';
+            
+            // 恢复树点击区域
+            document.getElementById('treeClickArea').style.pointerEvents = 'auto';
+            
+            // 进入倾诉页面
+            showPage('倾诉Page');
+        }
+        
+        // 初始化浏览器通知权限
+        function initNotificationPermission() {
+            if ('Notification' in window) {
+                if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+                    Notification.requestPermission();
+                }
+            }
+        }
+        
+        // 监听存储变化，实现跨标签页通信
+        window.addEventListener('storage', function(e) {
+            if (e.key.startsWith('hugNotification_') && e.newValue) {
+                const userId = e.key.split('_')[1];
+                if (currentUser && currentUser.id == userId) {
+                    checkForNewHugs();
+                }
+            }
+        });
+        
+        // 定期检查新拥抱
+        setInterval(checkForNewHugs, 3000);
+        
+        // 事件监听器
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化数据
+            initData();
+            
+            // 初始化通知权限
+            initNotificationPermission();
+            
+            // 树点击事件
+            document.getElementById('treeClickArea').addEventListener('click', handleTreeClick);
+            
+            // 放大树洞按钮点击事件
+            document.getElementById('treeholeButton').addEventListener('click', handleTreeholeButtonClick);
+            
+            // 写信按钮点击事件
+            document.getElementById('writeLetterBtn').addEventListener('click', function() {
+                showPage('writeLetterPage');
+            });
+            
+            // 窥探树洞按钮点击事件
+            document.getElementById('exploreHoleBtn').addEventListener('click', function() {
+                showPage('treeholeInsidePage');
+                renderLettersGrid();
+                createFloatingLetters();
+            });
+            
+            // 返回首页按钮点击事件
+            document.getElementById('backToHomeBtn').addEventListener('click', function() {
+                showPage('homePage');
+            });
+            
+            // 返回倾诉页面按钮点击事件
+            document.getElementById('backTo倾诉Btn').addEventListener('click', function() {
+                showPage('倾诉Page');
+            });
+            
+            // 离开树洞按钮点击事件
+            document.getElementById('leaveTreeholeBtn').addEventListener('click', function() {
+                showPage('倾诉Page');
+            });
+            
+            // 刷新信件按钮点击事件
+            document.getElementById('refreshLettersBtn').addEventListener('click', function() {
+                renderLettersGrid();
+            });
+            
+            // 关闭模态框按钮点击事件
+            document.getElementById('closeModalBtn').addEventListener('click', function() {
+                hideModal('letterModal');
+            });
+            
+            // 发送拥抱按钮点击事件
+            document.getElementById('sendHugBtn').addEventListener('click', function() {
+                const letterId = this.dataset.letterId;
+                const authorId = this.dataset.authorId;
+                sendHug(letterId, authorId);
+            });
+            
+            // 登录按钮点击事件
+            document.getElementById('loginBtn').addEventListener('click', function() {
+                showModal('loginModal');
+            });
+            
+            // 注册按钮点击事件
+            document.getElementById('registerBtn').addEventListener('click', function() {
+                showModal('registerModal');
+            });
+            
+            // 关闭登录模态框按钮点击事件
+            document.getElementById('closeLoginModal').addEventListener('click', function() {
+                hideModal('loginModal');
+            });
+            
+            // 关闭注册模态框按钮点击事件
+            document.getElementById('closeRegisterModal').addEventListener('click', function() {
+                hideModal('registerModal');
+            });
+            
+            // 关闭登录提示模态框按钮点击事件
+            document.getElementById('closeLoginRequiredModal').addEventListener('click', function() {
+                hideModal('loginRequiredModal');
+            });
+            
+            // 去登录按钮点击事件
+            document.getElementById('goToLoginBtn').addEventListener('click', function() {
+                hideModal('loginRequiredModal');
+                showModal('loginModal');
+            });
+            
+            // 切换到注册按钮点击事件
+            document.getElementById('switchToRegister').addEventListener('click', function() {
+                hideModal('loginModal');
+                showModal('registerModal');
+            });
+            
+            // 切换到登录按钮点击事件
+            document.getElementById('switchToLogin').addEventListener('click', function() {
+                hideModal('registerModal');
+                showModal('loginModal');
+            });
+            
+            // 登录表单提交事件
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const username = document.getElementById('loginUsername').value;
+                const password = document.getElementById('loginPassword').value;
+                loginUser(username, password);
+            });
+            
+            // 注册表单提交事件
+            document.getElementById('registerForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const username = document.getElementById('registerUsername').value;
+                const email = document.getElementById('registerEmail').value;
+                const password = document.getElementById('registerPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    showResultModal('错误', '两次输入的密码不一致', 'error');
+                    return;
+                }
+                
+                registerUser(username, email, password);
+            });
+            
+            // 信件表单提交事件
+            document.getElementById('letterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('letterTitle').value;
+                const content = document.getElementById('letterContent').value;
+                
+                if (content.trim() === '') {
+                    showResultModal('错误', '信件内容不能为空', 'error');
+                    return;
+                }
+                
+                submitLetter(title, content);
+                
+                // 清空表单
+                this.reset();
+            });
+            
+            // 点击模态框背景关闭模态框
+            document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+                backdrop.addEventListener('click', function() {
+                    const modal = this.parentElement;
+                    modal.classList.add('hidden');
+                });
+            });
+            
+            // 点击暗化遮罩关闭树洞按钮
+            document.getElementById('darkenOverlay').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const treeholeButton = document.getElementById('treeholeButton');
+                    
+                    treeholeButton.classList.remove('treehole-zoom');
+                    treeholeButton.style.opacity = '0';
+                    treeholeButton.style.pointerEvents = 'none';
+                    
+                    this.classList.remove('darken-background');
+                    this.style.pointerEvents = 'none';
+                    
+                    // 恢复树点击区域
+                    document.getElementById('treeClickArea').style.pointerEvents = 'auto';
+                }
+            });
+            
+            // 拥抱通知点击隐藏
+            document.getElementById('hugNotification').addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+            
+            // 实时拥抱通知点击隐藏
+            document.getElementById('realTimeHugNotification').addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+            
+            // 拥抱统计通知点击隐藏
+            document.getElementById('hugCountNotification').addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+            
+            // 鲜花统计通知点击隐藏
+            document.getElementById('flowerCountNotification').addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+            
+            // 新拥抱提醒点击隐藏
+            document.getElementById('newHugReminder').addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+            
+            // 重置数据相关事件
+            document.getElementById('resetDataBtn').addEventListener('click', function() {
+                showModal('resetDataModal');
+            });
+            
+            document.getElementById('cancelResetBtn').addEventListener('click', function() {
+                hideModal('resetDataModal');
+            });
+            
+            document.getElementById('confirmResetBtn').addEventListener('click', function() {
+                resetData();
+            });
+            
+            // 结果模态框关闭事件
+            document.getElementById('closeResultModal').addEventListener('click', function() {
+                hideModal('resultModal');
+            });
+        });
+    </script>
+
+
+</body></html>
